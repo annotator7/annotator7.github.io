@@ -14,7 +14,7 @@
 var complete = new Complete ();
 var Len_max1=data1.phrases.length,Len_max2=data2.phrases.length,Len_max3=data3.phrases.length,count1=0,count2=0,count3=0;
 var th_count1=0,th_count2=0,th_count3=0;
-String Str="Thread\_ends";
+String Str='Thread\_ends';
 //console.log(complete.com_in1,complete.com_in2,complete.com_in3);
 window.onload=function(){
 	/*
