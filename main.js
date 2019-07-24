@@ -14,7 +14,7 @@
 var complete = new Complete ();
 var Len_max1=data1.phrases.length,Len_max2=data2.phrases.length,Len_max3=data3.phrases.length,count1=0,count2=0,count3=0;
 var th_count1=0,th_count2=0,th_count3=0;
-String Str='Thread';
+String Str = "Thread_ends";
 //console.log(complete.com_in1,complete.com_in2,complete.com_in3);
 window.onload=function(){
 	/*
@@ -47,7 +47,7 @@ var counter1=document.getElementById('Count1');
 var output3=document.getElementById('Prev1');
 var output4=document.getElementById('Thread1');
 String str1=data.phrases[complete.get_level1()].body;
-if(str1..substring(0,7).equals(Str)==true && complete.get_level1()>th_count1){
+if(str1.equals(Str)==true && complete.get_level1()>th_count1){
 th_count1=complete.get_level1()+2;
 }
 output4.innerHTML=data.phrases[th_count1].body;
@@ -67,7 +67,7 @@ function drawData2() {
 counter2.innerHTML=count2;
 var output4=document.getElementById('Thread2');
 String str2=data.phrases[complete.get_level2()].body;
-if(str2.substring(0,7).equals(Str)==true && complete.get_level2()>th_count2){
+if(str2.equals(Str)==true && complete.get_level2()>th_count2){
 th_count2=complete.get_level2()+2;
 }
 output4.innerHTML=data.phrases[th_count2].body;
@@ -88,7 +88,7 @@ counter3.innerHTML=count3;
 var output3=document.getElementById('Prev3');
 var output4=document.getElementById('Thread3');
 String str3=data.phrases[complete.get_level3()].body;
-if(str3..substring(0,7).equals(Str)==true && complete.get_level3()>th_count3){
+if(str3.equals(Str)==true && complete.get_level3()>th_count3){
 th_count3=complete.get_level3()+2;
 }
 var output1=document.getElementById('Comment1.3');
