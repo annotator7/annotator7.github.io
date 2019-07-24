@@ -45,8 +45,8 @@ var counter1=document.getElementById('Count1');
 var output3=document.getElementById('Prev1');
 var output1=document.getElementById('Comment1');
 var output2=document.getElementById('Comment2');
-if(complete.get_level1()>0){
- output3.innerHTML=data.phrases[complete.get_level1()-1].body;
+if(complete.get_level1()>1){
+ output3.innerHTML=data.phrases[complete.get_level1()-2].body;
 }
  output1.innerHTML=data.phrases[complete.get_level1()].body;
  output2.innerHTML=data.phrases[complete.get_level1()+1].body;
@@ -60,8 +60,8 @@ counter2.innerHTML=count2;
 var output3=document.getElementById('Prev2');
 var output1=document.getElementById('Comment1.2');
 var output2=document.getElementById('Comment2.2');
-if(complete.get_level2()>0){
- output3.innerHTML=data.phrases[complete.get_level2()-1].body;
+if(complete.get_level2()>1){
+ output3.innerHTML=data.phrases[complete.get_level2()-2].body;
 }
  output1.innerHTML=data.phrases[complete.get_level2()].body;
  output2.innerHTML=data.phrases[complete.get_level2()+1].body;
@@ -74,8 +74,8 @@ counter3.innerHTML=count3;
 var output3=document.getElementById('Prev3');
 var output1=document.getElementById('Comment1.3');
 var output2=document.getElementById('Comment2.3');
-if(complete.get_level3()>0){
- output3.innerHTML=data.phrases[complete.get_level3()-1].body;
+if(complete.get_level3()>1){
+ output3.innerHTML=data.phrases[complete.get_level3()-2].body;
 }
  output1.innerHTML=data.phrases[complete.get_level3()].body;
  output2.innerHTML=data.phrases[complete.get_level3()+1].body;
