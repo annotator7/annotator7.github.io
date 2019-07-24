@@ -42,8 +42,12 @@ document.getElementById('Page3b').addEventListener("click", toComment3);
 function drawData1() {
 var data=data1;
 var counter1=document.getElementById('Count1');
+var output3=document.getElementById('Prev1');
 var output1=document.getElementById('Comment1');
 var output2=document.getElementById('Comment2');
+if(complete.get_level1()>0){
+ output3.innerHTML=data.phrases[complete.get_level1()-1].body;
+}
  output1.innerHTML=data.phrases[complete.get_level1()].body;
  output2.innerHTML=data.phrases[complete.get_level1()+1].body;
  counter1.innerHTML=count1;
@@ -53,8 +57,12 @@ function drawData2() {
 	var data=data2;
 	var counter2=document.getElementById('Count2');
 counter2.innerHTML=count2;
+var output3=document.getElementById('Prev2');
 var output1=document.getElementById('Comment1.2');
 var output2=document.getElementById('Comment2.2');
+if(complete.get_level2()>0){
+ output3.innerHTML=data.phrases[complete.get_level2()-1].body;
+}
  output1.innerHTML=data.phrases[complete.get_level2()].body;
  output2.innerHTML=data.phrases[complete.get_level2()+1].body;
 }
@@ -63,8 +71,12 @@ function drawData3() {
 var data=data3;
 var counter3=document.getElementById('Count3');
 counter3.innerHTML=count3;
+var output3=document.getElementById('Prev3');
 var output1=document.getElementById('Comment1.3');
 var output2=document.getElementById('Comment2.3');
+if(complete.get_level3()>0){
+ output3.innerHTML=data.phrases[complete.get_level3()-1].body;
+}
  output1.innerHTML=data.phrases[complete.get_level3()].body;
  output2.innerHTML=data.phrases[complete.get_level3()+1].body;
  }
