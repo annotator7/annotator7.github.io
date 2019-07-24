@@ -13,6 +13,7 @@
   firebase.initializeApp(firebaseConfig);
 var complete = new Complete ();
 var Len_max1=data1.phrases.length,Len_max2=data2.phrases.length,Len_max3=data3.phrases.length,count1=0,count2=0,count3=0;
+var th_count1=0,th_count2=0,th_count3=0;
 //console.log(complete.com_in1,complete.com_in2,complete.com_in3);
 window.onload=function(){
 	/*
@@ -43,6 +44,11 @@ function drawData1() {
 var data=data1;
 var counter1=document.getElementById('Count1');
 var output3=document.getElementById('Prev1');
+var output4=document.getElementById('Thread1');
+if((data.phrases[complete.get_level1()].body).equals("Thread_ends")==true && complete.get_level1()>th_count1){
+th_count1=complete.get_level1()+2;
+}
+output4.innerHTML=data.phrases[th_count1].body;
 var output1=document.getElementById('Comment1');
 var output2=document.getElementById('Comment2');
 if(complete.get_level1()>1){
@@ -57,6 +63,11 @@ function drawData2() {
 	var data=data2;
 	var counter2=document.getElementById('Count2');
 counter2.innerHTML=count2;
+var output4=document.getElementById('Thread2');
+if((data.phrases[complete.get_level2()].body).equals("Thread_ends")==true && complete.get_level2()>th_count2){
+th_count2=complete.get_level2()+2;
+}
+output4.innerHTML=data.phrases[th_count2].body;
 var output3=document.getElementById('Prev2');
 var output1=document.getElementById('Comment1.2');
 var output2=document.getElementById('Comment2.2');
@@ -72,6 +83,10 @@ var data=data3;
 var counter3=document.getElementById('Count3');
 counter3.innerHTML=count3;
 var output3=document.getElementById('Prev3');
+var output4=document.getElementById('Thread3');
+if((data.phrases[complete.get_level3()].body).equals("Thread_ends")==true && complete.get_level3()>th_count3){
+th_count3=complete.get_level3()+2;
+}
 var output1=document.getElementById('Comment1.3');
 var output2=document.getElementById('Comment2.3');
 if(complete.get_level3()>1){
