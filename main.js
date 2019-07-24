@@ -40,7 +40,6 @@ document.getElementById('Page1b').addEventListener("click", toComment);
 document.getElementById('Page2b').addEventListener("click", toComment2);
 document.getElementById('Page3b').addEventListener("click", toComment3);
 function drawData1() {
-count1=count1+1;
 var data=data1;
 var counter1=document.getElementById('Count1');
 var output1=document.getElementById('Comment1');
@@ -51,7 +50,6 @@ var output2=document.getElementById('Comment2');
 }
 
 function drawData2() {
-count2=count2+1;
 	var data=data2;
 	var counter2=document.getElementById('Count2');
 counter2.innerHTML=count2;
@@ -62,7 +60,6 @@ var output2=document.getElementById('Comment2.2');
 }
 
 function drawData3() {
-count3=count3+1;
 var data=data3;
 var counter3=document.getElementById('Count3');
 counter3.innerHTML=count3;
@@ -85,6 +82,7 @@ drawData3();
 function nextComment(e){
 e.preventDefault();
 if(complete.get_level1()<Len_max1-1){
+count1=count1+1;
 complete.set_level1(complete.get_level1()+2);
 console.log(complete.get_level1());
 drawData1();
@@ -93,6 +91,7 @@ drawData1();
 function nextComment2(e){
 e.preventDefault();
 if(complete.get_level2()<Len_max2-1){
+count2=count2+1;
 complete.set_level2(complete.get_level2()+2);
 console.log(complete.get_level1());
 drawData2();
@@ -101,6 +100,7 @@ drawData2();
 function nextComment3(e){
 e.preventDefault();
 if(complete.get_level3()<Len_max3-1){
+count3=count3+1;
 complete.set_level3(complete.get_level3()+2);
 console.log(complete.get_level3());
 drawData3();
@@ -110,6 +110,7 @@ drawData3();
 function prevComment(e){
 e.preventDefault();
 if(complete.get_level1()<Len_max1-1){
+count1=count1-1;
 complete.set_level1(complete.get_level1()-2);
 console.log(complete.get_level1());
 drawData1();
@@ -118,6 +119,7 @@ drawData1();
 function prevComment2(e){
 e.preventDefault();
 if(complete.get_level2()<Len_max2-1){
+count2=count2-1;
 complete.set_level2(complete.get_level2()-2);
 console.log(complete.get_level1());
 drawData2();
@@ -126,6 +128,7 @@ drawData2();
 function prevComment3(e){
 e.preventDefault();
 if(complete.get_level3()<Len_max3-1){
+count3=count3-1;
 complete.set_level3(complete.get_level3()-2);
 console.log(complete.get_level3());
 drawData3();
