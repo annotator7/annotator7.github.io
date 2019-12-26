@@ -12,7 +12,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 var complete = new Complete ();
-var Len_max1=data1.phrases.length,Len_max2=data2.phrases.length,Len_max3=data3.phrases.length,count1=0,count2=0,count3=0;
+var Len_max1=data1.phrases.length,Len_max2=data2.phrases.length,Len_max3=data3.phrases.length,count1=0,count2=0,count3=0,Post1,Post2,Post3;
 var th_count1=0,th_count2=0,th_count3=0;
 var Str = "Thread_ends";
 //console.log(complete.com_in1,complete.com_in2,complete.com_in3);
@@ -51,6 +51,7 @@ if(str1 === Str && complete.get_level1()>th_count1){
 th_count1=complete.get_level1()+2;
 }
 output4.innerHTML=data.phrases[th_count1].body;
+Post1=data.phrases[th_count1].id;
 var output1=document.getElementById('Comment1');
 var output2=document.getElementById('Comment2');
 if(complete.get_level1()>1){
@@ -71,6 +72,7 @@ if(str2 === Str && complete.get_level2()>th_count2){
 th_count2=complete.get_level2()+2;
 }
 output4.innerHTML=data.phrases[th_count2].body;
+Post2=data.phrases[th_count2].id;
 var output3=document.getElementById('Prev2');
 var output1=document.getElementById('Comment1.2');
 var output2=document.getElementById('Comment2.2');
@@ -91,6 +93,8 @@ var str3=data.phrases[complete.get_level3()].body;
 if(str3 === Str && complete.get_level3()>th_count3){
 th_count3=complete.get_level3()+2;
 }
+output4.innerHTML=data.phrases[th_count3].body;
+Post3=data.phrases[th_count3].id;
 var output1=document.getElementById('Comment1.3');
 var output2=document.getElementById('Comment2.3');
 if(complete.get_level3()>1){
@@ -243,6 +247,7 @@ function getInputVal(id){
 function saveMessage(Comment1,Comment2,Discourse1,Discourse2){
 	var newMessageRef=firebase.database().ref('Annotations').push();
 	newMessageRef.set({
+		Post: Post1,
 		Comment1: Comment1,
 		Comment2: Comment2,
 		Discourse1: Discourse1,
@@ -255,6 +260,7 @@ function submitForm2(e){
 	//var messagesRef2=firebase.database().ref('Annotations2');
 var Comment1=data2.phrases[complete.get_level2()].id;
 var Comment2=data2.phrases[complete.get_level2()+1].id;
+var Post=Post1;
 var Discourse1=loopSelected('Discourse1.2');
 var Discourse2=loopSelected('Discourse2.2'); 
 	
@@ -296,6 +302,7 @@ function getInputVal(id){
 function saveMessage2(Comment1,Comment2,Discourse1,Discourse2){
 	var newMessageRef2=firebase.database().ref('Annotations2').push();
 	newMessageRef2.set({
+		Post: Post2,
 		Comment1: Comment1,
 		Comment2: Comment2,
 		Discourse1: Discourse1,
@@ -350,6 +357,7 @@ function getInputVal(id){
 function saveMessage3(Comment1,Comment2,Discourse1,Discourse2){
 	var newMessageRef3=firebase.database().ref('Annotations3').push();
 	newMessageRef3.set({
+		Post: Post3,
 		Comment1: Comment1,
 		Comment2: Comment2,
 		Discourse1: Discourse1,
